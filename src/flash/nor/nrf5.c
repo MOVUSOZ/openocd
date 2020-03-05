@@ -482,7 +482,7 @@ static int nrf5_protect_check(struct flash_bank *bank)
 
 	if (!(chip->features & NRF5_FEATURE_SERIES_51)) {
 		LOG_WARNING("Flash protection of this nRF device is not supported");
-		return ERROR_FLASH_OPER_UNSUPPORTED;
+		return ERROR_OK;
 	}
 
 	res = target_read_u32(chip->target, NRF51_FICR_CLENR0,
